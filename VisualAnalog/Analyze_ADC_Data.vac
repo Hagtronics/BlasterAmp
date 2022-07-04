@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<!--VisualAnalog Canvas File - DO NOT EDIT MANUALLY-->
+<canvas program_version="1.9.48.1" display_name="Untitled" s_name="Canvas1" description="" hidden="False" locked="False" securityLevel="Normal">
+  <BlockList>
+    <Count>6</Count>
+    <Block_0>
+      <Type>SourceBlockControls.SB_PatternLoader</Type>
+      <Assembly>SourceBlockControls, Version=2.7.3.0, Culture=neutral, PublicKeyToken=null</Assembly>
+      <Location>
+        <X>32</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <Width>376</Width>
+        <Height>184</Height>
+      </Size>
+      <PortSettings>
+        <OutputPort>
+          <Count>1</Count>
+          <Node_0 />
+        </OutputPort>
+      </PortSettings>
+      <SampleFrequency>100000</SampleFrequency>
+      <FileFormat>I Only</FileFormat>
+      <auto_load>True</auto_load>
+      <File_0>C:\ADC_Test_Data_100ksps.txt</File_0>
+      <File_1>
+      </File_1>
+      <Loaded>True</Loaded>
+    </Block_0>
+    <Block_1>
+      <Type>ProcessBlockControls.PB_Window</Type>
+      <Assembly>ProcessBlockControls, Version=2.6.0.1, Culture=neutral, PublicKeyToken=null</Assembly>
+      <Location>
+        <X>432</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <Width>256</Width>
+        <Height>64</Height>
+      </Size>
+      <PortSettings>
+        <InputPort>
+          <Count>1</Count>
+          <Node_0 />
+        </InputPort>
+        <OutputPort>
+          <Count>1</Count>
+          <Node_0 />
+        </OutputPort>
+      </PortSettings>
+      <WindowRoutine>wndBH4</WindowRoutine>
+    </Block_1>
+    <Block_2>
+      <Type>ProcessBlockControls.PB_FFT</Type>
+      <Assembly>ProcessBlockControls, Version=2.6.0.1, Culture=neutral, PublicKeyToken=null</Assembly>
+      <Location>
+        <X>704</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <Width>96</Width>
+        <Height>64</Height>
+      </Size>
+      <PortSettings>
+        <InputPort>
+          <Count>1</Count>
+          <Node_0 />
+        </InputPort>
+        <OutputPort>
+          <Count>1</Count>
+          <Node_0 />
+        </OutputPort>
+      </PortSettings>
+    </Block_2>
+    <Block_3>
+      <Type>ResultsBlockControls.RB_Graph</Type>
+      <Assembly>ResultsBlockControls, Version=2.4.7.1, Culture=neutral, PublicKeyToken=null</Assembly>
+      <Location>
+        <X>48</X>
+        <Y>248</Y>
+      </Location>
+      <Size>
+        <Width>840</Width>
+        <Height>608</Height>
+      </Size>
+      <PortSettings>
+        <InputPort>
+          <Count>2</Count>
+          <Node_0 />
+          <Node_1 />
+        </InputPort>
+      </PortSettings>
+      <display name="" append_date="True" append_time="True" />
+      <graph_settings refresh_mode="Update" />
+      <data_settings auto_append="False" append_mode="Update" auto_save="False" save_mode="Update" />
+      <form state="Normal" bounds="{X=32,Y=32,Width=736,Height=512}" auto_float="False" auto_pic="False" pic_mode="Update" pic_file="" pic_date_time="False" />
+      <graphs count="2" split_value="0.5">
+        <graph index="0" highlights="True" labels="True" circle="True" radius="2">
+          <visible>True</visible>
+          <selected>True</selected>
+        </graph>
+        <graph index="1" highlights="True" labels="True" circle="True" radius="2">
+          <visible>False</visible>
+          <selected>False</selected>
+        </graph>
+      </graphs>
+      <zoom_method>Zoom_X</zoom_method>
+      <results split_position="220" visible="True" />
+      <data_list>
+        <data index="0" display_name="Input 1" device_name="" comments="" plot_index="-1" results_append="False" results_file_name="" data_save="False" data_file_name="" data_append_date_time="False" />
+        <data index="1" display_name="Input 2" device_name="" comments="" plot_index="-1" results_append="False" results_file_name="" data_save="False" data_file_name="" data_append_date_time="False" />
+      </data_list>
+    </Block_3>
+    <Block_4>
+      <Type>DataAnalysis.Blocks.PB_FFTAnalysis</Type>
+      <Assembly>DataAnalysis.Blocks, Version=2.4.3.0, Culture=neutral, PublicKeyToken=null</Assembly>
+      <Location>
+        <X>816</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <Width>128</Width>
+        <Height>64</Height>
+      </Size>
+      <data_analysis>
+        <calculations abn="True" nph="True" snr="True" snr_fs="True" sfdr="True" thd="True" sinad="True" />
+        <advanced name="AD6643 NSR" enabled="False" nsr_mode="0" tw="0" bw="0.22" />
+        <freq_bands>
+          <freq_band name="DC" symbol="" freq="0" ssb="6" ssb_units="Bins" calc="SpurExclude" power="" locate="Frequency" var="" />
+          <freq_band name="Fund" symbol="" freq="" ssb="10" ssb_units="Bins" calc="Reference" power="" locate="NextMaxPower" var="fund" />
+          <freq_band name="Harm 2" symbol="2" freq="2 * fund" ssb="3" ssb_units="Bins" calc="Harmonic" power="" locate="Frequency" var="" />
+          <freq_band name="Harm 3" symbol="3" freq="3 * fund" ssb="3" ssb_units="Bins" calc="Harmonic" power="" locate="Frequency" var="" />
+          <freq_band name="Harm 4" symbol="4" freq="4 * fund" ssb="3" ssb_units="Bins" calc="Harmonic" power="" locate="Frequency" var="" />
+          <freq_band name="Harm 5" symbol="5" freq="5 * fund" ssb="3" ssb_units="Bins" calc="Harmonic" power="" locate="Frequency" var="" />
+          <freq_band name="Harm 6" symbol="6" freq="6 * fund" ssb="3" ssb_units="Bins" calc="Harmonic" power="" locate="Frequency" var="" />
+          <freq_band name="Worst Other" symbol="+" freq="" ssb="3" ssb_units="Bins" calc="SpurInclude" power="" locate="NextMaxPower" var="" />
+        </freq_bands>
+      </data_analysis>
+    </Block_4>
+    <Block_5>
+      <Type>ResultsBlockControls.CommentBlock</Type>
+      <Assembly>ResultsBlockControls, Version=2.4.7.1, Culture=neutral, PublicKeyToken=null</Assembly>
+      <Location>
+        <X>456</X>
+        <Y>128</Y>
+      </Location>
+      <Size>
+        <Width>208</Width>
+        <Height>88</Height>
+      </Size>
+      <comment>A VisualAnalog Script to read a time series input from a file, and produce a analysis result. The Blackman-Harris window is good to 16-18 Bits of dynamic range.
+
+Version: 16Jun22</comment>
+    </Block_5>
+  </BlockList>
+  <WireList>
+    <Count>4</Count>
+    <Wire_0>
+      <Points>
+        <Count>2</Count>
+        <Point_0>
+          <X>431</X>
+          <Y>56</Y>
+        </Point_0>
+        <Point_1>
+          <X>407</X>
+          <Y>56</Y>
+        </Point_1>
+      </Points>
+    </Wire_0>
+    <Wire_1>
+      <Points>
+        <Count>2</Count>
+        <Point_0>
+          <X>703</X>
+          <Y>56</Y>
+        </Point_0>
+        <Point_1>
+          <X>687</X>
+          <Y>56</Y>
+        </Point_1>
+      </Points>
+    </Wire_1>
+    <Wire_2>
+      <Points>
+        <Count>2</Count>
+        <Point_0>
+          <X>815</X>
+          <Y>56</Y>
+        </Point_0>
+        <Point_1>
+          <X>799</X>
+          <Y>56</Y>
+        </Point_1>
+      </Points>
+    </Wire_2>
+    <Wire_3>
+      <Points>
+        <Count>6</Count>
+        <Point_0>
+          <X>47</X>
+          <Y>272</Y>
+        </Point_0>
+        <Point_1>
+          <X>32</X>
+          <Y>272</Y>
+        </Point_1>
+        <Point_2>
+          <X>32</X>
+          <Y>224</Y>
+        </Point_2>
+        <Point_3>
+          <X>952</X>
+          <Y>224</Y>
+        </Point_3>
+        <Point_4>
+          <X>952</X>
+          <Y>56</Y>
+        </Point_4>
+        <Point_5>
+          <X>943</X>
+          <Y>56</Y>
+        </Point_5>
+      </Points>
+    </Wire_3>
+  </WireList>
+  <Connections>
+    <Count>4</Count>
+    <Connection_0>
+      <Wire>0</Wire>
+      <Source>
+        <Block>0</Block>
+        <Node>0</Node>
+      </Source>
+      <Destination>
+        <Block>1</Block>
+        <Node>0</Node>
+      </Destination>
+    </Connection_0>
+    <Connection_1>
+      <Wire>1</Wire>
+      <Source>
+        <Block>1</Block>
+        <Node>0</Node>
+      </Source>
+      <Destination>
+        <Block>2</Block>
+        <Node>0</Node>
+      </Destination>
+    </Connection_1>
+    <Connection_2>
+      <Wire>2</Wire>
+      <Source>
+        <Block>2</Block>
+        <Node>0</Node>
+      </Source>
+      <Destination>
+        <Block>4</Block>
+        <Node>0</Node>
+      </Destination>
+    </Connection_2>
+    <Connection_3>
+      <Wire>3</Wire>
+      <Source>
+        <Block>4</Block>
+        <Node>0</Node>
+      </Source>
+      <Destination>
+        <Block>3</Block>
+        <Node>0</Node>
+      </Destination>
+    </Connection_3>
+  </Connections>
+</canvas>
