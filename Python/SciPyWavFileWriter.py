@@ -27,3 +27,4 @@ amplitude = np.iinfo(np.int32).max
 data = amplitude * np.sin(2. * np.pi * tone_freq * t * duration)
 
 write(file_name, sample_rate, data.astype(np.int32))
+
