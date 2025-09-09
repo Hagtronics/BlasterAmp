@@ -27,7 +27,7 @@ import struct
 import math
 import threading
 import time
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 
 
 # Setup audio stream
@@ -199,3 +199,4 @@ if __name__ == "__main__":
     window.Close()
 
     # ----- Fini -----
+
